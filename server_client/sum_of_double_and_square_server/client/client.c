@@ -46,8 +46,8 @@ int main()
 	temp = strtok(buff, " ");
 	while( temp != NULL )
 	{
-      sum += atoi(temp);
-      temp = strtok(NULL, " ");
+      	    sum += atoi(temp);
+      	    temp = strtok(NULL, " ");
    	}
 
    	// Send the sum to the server
