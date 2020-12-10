@@ -9,6 +9,7 @@
 
 int checkPallindrome(char* string) 
 { 
+	printf("%s", string);
     char *ptr, *rev;
     ptr = string;
 
@@ -53,8 +54,7 @@ int main()
 	connfd=accept(listenfd,(struct sockaddr *)&cliaddr ,&len);
 	n=read(connfd , buff ,sizeof(buff));
 
-	buff[n]=0;
-	buff[strlen(buff)-1] = '\0';
+	buff[strlen(buff)] = '\0';
 
 	int temp = checkPallindrome(buff);
 	char res[1024];
