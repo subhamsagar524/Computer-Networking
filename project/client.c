@@ -1,15 +1,15 @@
 /*  Client Code
 
-	C program to connect with the server 
-	and receive the result.
+    C program to connect with the server 
+    and receive the result.
 
-	Sample Output:
+    Sample Output:
 
-		On client1:
-			Result: 100 300 500 700 900 
+	On client1:
+	    Result: 100 300 500 700 900 
 
-		On client2:
-			Result: 200 400 600 800 1000 
+	On client2:
+	    Result: 200 400 600 800 1000 
 
 */
 
@@ -23,16 +23,16 @@
 // Driver Code
 int main()
 {
-	// Enter name of the client
-	char c_name[50];
-	printf("\nEnter name of client: ");
-	scanf("%[^\n]%*c", c_name);  
+    // Enter name of the client
+    char c_name[50];
+    printf("\nEnter name of client: ");
+    scanf("%[^\n]%*c", c_name);  
 
-	// Creating and connecting client to server
-	struct sockaddr_in ServerIp;
-	printf("\nConnecting to server...");
+    // Creating and connecting client to server
+    struct sockaddr_in ServerIp;
+    printf("\nConnecting to server...");
 
-	int sock = socket( AF_INET, SOCK_STREAM,0);
+    int sock = socket( AF_INET, SOCK_STREAM,0);
 
     ServerIp.sin_port = htons(1234);
     ServerIp.sin_family= AF_INET;
