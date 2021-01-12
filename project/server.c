@@ -5,15 +5,15 @@
     If second number is 2: then 2nd number is sent to 2nd client
 
     Sample Input: 1 100                                  
-				  2 200
-				  1 300
-				  2 400
-				  1 500
-				  2 600
-				  1 700
-				  2 800
-				  1 900
-				  2 1000
+		  2 200
+		  1 300
+		  2 400
+		  1 500
+		  2 600
+		  1 700
+		  2 800
+		  1 900
+		  2 1000
 
 */
 
@@ -30,19 +30,19 @@ int clients[2];
 int main()
 {
     // Max clients connections needed are two
-	int clients[2];
+    int clients[2];
+    
+    // Input initial data[10 tuples]
+    printf("Enter 10 tuples(x, y): \n");
+    int x[10], y[10];
+    for ( int i = 0; i < 10; i++ )
+	scanf("%d%d", &x[i], &y[i]);
 
-	// Input initial data[10 tuples]
-	printf("Enter 10 tuples(x, y): \n");
-	int x[10], y[10];
-	for ( int i = 0; i < 10; i++ )
-		scanf("%d%d", &x[i], &y[i]);
-
-	// Creating the server
-	struct sockaddr_in ServerIp, ClientIp;
-	int len = sizeof(ServerIp);
-	int sock=0 , Client_sock=0;
-	ServerIp.sin_family = AF_INET;
+    // Creating the server
+    struct sockaddr_in ServerIp, ClientIp;
+    int len = sizeof(ServerIp);
+    int sock=0 , Client_sock=0;
+    ServerIp.sin_family = AF_INET;
     ServerIp.sin_port = htons(1234);
     ServerIp.sin_addr.s_addr = inet_addr("127.0.0.1");
     
@@ -78,13 +78,13 @@ int main()
 
     	if (x[i] == 1)
     	{
-    		strcat(msg1, temp);
-    		strcat(msg1, " ");
+    	    strcat(msg1, temp);
+    	    strcat(msg1, " ");
     	}
     	else
     	{
-    		strcat(msg2, temp);
-    		strcat(msg2, " ");
+    	    strcat(msg2, temp);
+    	    strcat(msg2, " ");
     	}
     }
 
@@ -97,5 +97,5 @@ int main()
         printf("sending failure \n");
     printf("\nData sent to 2nd client\n");
 
-	return 0;
+    return 0;
 }
