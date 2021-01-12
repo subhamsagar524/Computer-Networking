@@ -29,7 +29,7 @@ int clients[2];
 // Driver Function
 int main()
 {
-	// Max clients connections needed are two
+    // Max clients connections needed are two
 	int clients[2];
 
 	// Input initial data[10 tuples]
